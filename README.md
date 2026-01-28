@@ -42,7 +42,7 @@ Here are some great APIs I can add for you (just ask!):
 - **NBA Stats** (`nba-stats-db.p.rapidapi.com`) - Player and team statistics - FREE tier
 - **Live Sports Odds** (`live-sports-odds.p.rapidapi.com`) - Sports betting odds - FREE tier
 
-**Movies & TV:**
+**Movies & TV:**  
 - **Streaming Availability** (`streaming-availability.p.rapidapi.com`) - Where to watch movies/shows - FREE tier (100 req/day)
 - **Advanced Movie Search** (`advanced-movie-search.p.rapidapi.com`) - Movie database - FREE
 - **OTT Details** (`ott-details.p.rapidapi.com`) - Streaming platform info - FREE tier
