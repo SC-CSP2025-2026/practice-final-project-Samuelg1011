@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Playwrite+US+Trad+Guides&family=Shadows+Into+Light&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  background: #5d5e91;
+  background-image: linear-gradient(45deg, #5d5e91, #f53d5f);
+  display: flex;
+  font-family: "Playwrite USA Traditional Guide", cursive, serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Playwrite USA Traditional Guide", cursive, serif;
+}
+
+.search {
+  width: 270px;
+}
+
+.itemsList {
+  display: flex;
+  text-align: center;
+}
