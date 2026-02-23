@@ -1,8 +1,8 @@
-const randomButton = document.querySelector("#random-btn");
-const listGroup = document.querySelector(".list-group");
+const booksList = document.querySelector(".list-group");
+const searchInput = document.querySelector("#search-box");
 
-const loadBooksByTitle = async (bookTitle) => {
-  const url = `https://student-api-proxy.onrender.com/api/open-library2.p.rapidapi.com/search_title/${bookTitle}&limit=1`;
+const loadBooksBySearch = async (search_title) => {
+  const url = `https://student-api-proxy.onrender.com/api/open-library2.p.rapidapi.com/search_title/${search_title}&limit=1`;
   const options = {
     method: "GET",
     headers: {
@@ -11,23 +11,26 @@ const loadBooksByTitle = async (bookTitle) => {
     },
   };
 
-  const response = await fech(url, options);
+  const response = await fetch(url, options);
   const result = await response.json();
-  const data = getSampleBooks(); //result.data;
+  const data = result.data; //getSampleBooks();
   const books = data.books;
-  console.log(books);
-
-  listGroup.innerHTML = "";
 
   books.forEach((book) => {
-    const listItem = `<li class="list-group-item">${book.title} - ${book.author}</li>`;
-    listGroup.insertAdjacentHTML("beforeend", listItem);
+    const listItem = `<li class="list-group-item">
+              <div class="books.title">${book.title}
+              </div>
+            </li>`;
+    booksList.insertAdjacentHTML("beforeend", listItem);
+    // console.log(book.title);
   });
-
-  console.log(books);
 };
+booksList.innerHTML = "";
 
-loadBooksByTitle("sample");
-
-randomButton.addEventListener("click", loadBooksByTitle);
-randomButton.books = "Harry Potter";
+searchInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    const searchTerm = searchInput.value.trim();
+    loadBooksBySearch(searchTerm);
+  }
+});
